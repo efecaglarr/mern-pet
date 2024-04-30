@@ -1,0 +1,122 @@
+.custom-app-bar {
+  background-color: #FAF9F6 !important; /* Set your desired background color */
+}
+
+.custom-app-bar:active {
+  background-color: #FAF9F6 !important; /* Prevent background color change on click */
+}
+
+.nav_texts {
+  color: black;
+  font-family: 'Mulish';
+}
+
+.nav_texts:hover {
+  color: #007bff; /* Change this to the desired hover color */
+  font-family: 'Mulish';
+}
+
+.nav_texts:active {
+  color: black;
+  font-family: 'Mulish';
+}
+
+button {
+    /* Variables */
+    --button_radius: 0.5em;
+    /* --button_color: #FEF9F5;
+    --button_outline_color: #8b939f; */
+    --button_color: #FEF9F5;
+    --button_outline_color: black;
+    font-size: 14px;
+    font-weight: normal;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+    padding: 0.01em 0.01em;
+  }
+
+
+  
+  .button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+  } 
+  
+  button:hover .button_top {
+    /* Pull the button upwards when hovered */
+    transform: translateY(-0.33em);
+  }
+  
+  button:active .button_top {
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
+  }
+  
+  .profile {
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    align-items: center;
+  }
+  
+  .profile.sm {
+    width: auto;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  
+  .logout {
+    margin-left: 10px;
+  }
+  
+  .userName {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .brandContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .purple {
+    color: var(--deepPurple-contrastText);
+    background-color: var(--deepPurple);
+  }
+
+  h6 {
+    color: grey;
+  }
+
+  .nav_texts {
+    font-size: 14px;
+    font-weight: bold;
+    color: #8b939f;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 800px) {
+    .appBar {
+      flex-direction: column;
+    }
+  
+    .toolbar {
+      width: auto;
+    }
+  
+    .profile {
+      width: auto;
+      justify-content: center;
+    }
+  }
+  
