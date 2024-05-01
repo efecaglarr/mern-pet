@@ -24,7 +24,7 @@ import "./styles.css";
 
 import logo from "../../images/logo.png";
 
-const pages = ["ADOPT", "PETS", "ABOUT"];
+const pages = ["ADOPT", "PETS", "CREATE"];
 
 const Navbar = () => {
 	const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
@@ -32,13 +32,6 @@ const Navbar = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const location = useLocation();
-
-
-	const handleAppBarClick = (e) => {
-		e.preventDefault(); // Prevent the default behavior of the <a> tag
-		e.stopPropagation();
-
-	  };
 
 	const handleOpenNavMenu = (event) => {
 		setAnchorElNav(event.currentTarget);
@@ -91,7 +84,7 @@ const Navbar = () => {
 			}}
 			className='custom-app-bar'
 			maxwidth='lg'
-			onClick={handleAppBarClick} // Add this line
+			onClick={(e) => {e.preventDefault();}} // Add this line
 		>
 			{" "}
 			<Container maxWidth='lg'>

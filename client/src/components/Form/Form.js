@@ -60,7 +60,8 @@ const Form = ({ currentId, setCurrentId }) => {
                 <div className={classes.fileInput}><FileBase type='file' multiple={false} onDone={({base64}) => setPostData({...postData, selectedFile: base64})}/></div>
                 
                 <Button className={classes.buttonSubmit} variant="contained" color='primary' size="large" type='submit' fullWidth>Submit</Button> {/* Çok fazla props (özellik) var ama bunlar materialUI'a ait*/}
-                <Button variant="contained" color='secondary' size="small" onClick={clear} fullWidth>Clear</Button> {/* Bu propslar olmasaydı oldukça fazla css yazacaktık*/}
+                <br/>
+                <Button variant="contained" color='secondary' size="large" onClick={clear} fullWidth>Clear</Button> {/* Bu propslar olmasaydı oldukça fazla css yazacaktık*/}
             </form>
         </Paper>
     )

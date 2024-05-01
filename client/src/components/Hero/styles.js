@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     position: 'relative', // Relative positioning for text overlay
     width: '100%',
     height: '90vh',
-    marginBottom: '50px'
+    marginBottom: '20px'
   },
   hero__image: {
     width: '100%',

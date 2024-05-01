@@ -25,8 +25,8 @@ function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 
-const Home = () => {
-  const [currentId, setCurrentId] = useState(0);
+const Home = ({currentId, setCurrentId}) => {
+  
   const dispatch = useDispatch();
   const query = useQuery();
   const navigate = useNavigate();
@@ -61,17 +61,9 @@ const Home = () => {
     <Container >
       <Grow in>
         <Container>
-          <Grid className={classes.gridContainer} container justifyContent="space-between" alignItems="stretch" spacing={3}
-          >
-            <Grid className={classes.gridPosts} item xs={12} /* take 12 spaces on mobile */ sm={12} md={12}>
-              <Posts setCurrentId={setCurrentId} />
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <AppBar
-                className={classes.appBarSearch}
-                position="static"
-                color="inherit" /*if a parent component has a textColor of primary and a child component has a textColor of inherit, the child component's text will have the same color as the parent component's text that is defined as primary.*/
-              >
+          <Grid className={classes.gridContainer} container justifyContent="space-between" alignItems="stretch" spacing={3}>
+            <Grid item xs={12} /* take 12 spaces on mobile */ sm={12} md={12}>
+              <div className={classes.appBarSearch}>
                 <TextField
                   name="search"
                   variant="outlined"
@@ -80,10 +72,10 @@ const Home = () => {
                   fullWidth
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  style={{ marginBottom: "10px" }}
+                  style={{ marginBottom: "10px", width: "80%"}}
                 />
                 <MuiChipsInput
-                  style={{ marginBottom: "10px" }}
+
                   value={tags}
                   onAddChip={handleAdd}
                   onDeleteChip={handleDelete}
@@ -96,15 +88,15 @@ const Home = () => {
                 >
                   Search
                 </Button>
-              </AppBar>
-              <Form
-                currentId={currentId}
-                setCurrentId={setCurrentId}
-                className={classes.pagination}
-              />
-              <Paper elevation={10}>
+              </div>
+              
+              <Grid className={classes.gridPosts} item xs={12} /* take 12 spaces on mobile */ sm={12} md={12}>
+              <Posts setCurrentId={setCurrentId} />
+            </Grid>
+
+              <div style={{marginTop: '30px',display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <Pagination page={page}/>
-              </Paper>
+                </div>
             </Grid>
           </Grid>
         </Container>
