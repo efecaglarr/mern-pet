@@ -84,57 +84,19 @@ const Navbar = () => {
 			}}
 			className='custom-app-bar'
 			maxwidth='lg'
-			onClick={(e) => {e.preventDefault();}} // Add this line
+
 		>
 			{" "}
 			<Container maxWidth='lg'>
 				<Toolbar disableGutters>
-					<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-						<IconButton
-							size='large'
-							aria-label='account of current user'
-							aria-controls='menu-appbar'
-							aria-haspopup='true'
-							onClick={handleOpenNavMenu}
-							color='black'
-						>
-							<MenuIcon color='black' />
-						</IconButton>
-						<Menu
-							id='menu-appbar'
-							anchorEl={anchorElNav}
-							anchorOrigin={{
-								vertical: "bottom",
-								horizontal: "left",
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: "top",
-								horizontal: "left",
-							}}
-							open={Boolean(anchorElNav)}
-							onClose={handleCloseNavMenu}
-							sx={{
-								display: { xs: "block", md: "none" },
-							}}
-						>
-							{pages.map((page) => (
-								<MenuItem key={page} onClick={handleCloseNavMenu}>
-									<Typography className='nav_texts' textAlign='center'>
-										{page}
-									</Typography>
-								</MenuItem>
-							))}
-						</Menu>
-					</Box>
-					<Link to={`/`}>
+					
+					<NavLink to={`/`}>
 						<img
                             src={logo}
                             width={90}
                             alt='Logo'
-                            style={{ pointerEvents: "none" }}
                         />
-					</Link>
+					</NavLink>
 					<Box
 						sx={{
 							flexGrow: 1,
@@ -211,6 +173,46 @@ const Navbar = () => {
 							</button>
 						)}
 					</div>
+					<Box sx={{ flexGrow: 2, display: { xs: "flex", md: "none" } }}>
+						<IconButton
+							size='large'
+							aria-label='account of current user'
+							aria-controls='menu-appbar'
+							aria-haspopup='true'
+							onClick={handleOpenNavMenu}
+							color='black'
+							className="mobile_menu" 
+						>
+							<MenuIcon className="menu_icon"/>
+						</IconButton>
+						<Menu
+							id='menu-appbar'
+							anchorEl={anchorElNav}
+							anchorOrigin={{
+								vertical: "bottom",
+								horizontal: "left",
+							}}
+							keepMounted
+							transformOrigin={{
+								vertical: "top",
+								horizontal: "left",
+							}}
+							open={Boolean(anchorElNav)}
+							onClose={handleCloseNavMenu}
+							sx={{
+								display: { xs: "block", md: "none" },
+							}}
+							className="menu"
+						>
+							{pages.map((page) => (
+								<MenuItem key={page} onClick={handleCloseNavMenu}>
+									<Typography className='nav_texts' textAlign='center'>
+										{page}
+									</Typography>
+								</MenuItem>
+							))}
+						</Menu>
+					</Box>
 				</Toolbar>
 			</Container>
 		</AppBar>

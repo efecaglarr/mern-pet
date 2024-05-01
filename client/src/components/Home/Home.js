@@ -75,7 +75,7 @@ const Home = ({currentId, setCurrentId}) => {
                   style={{ marginBottom: "10px", width: "80%"}}
                 />
                 <MuiChipsInput
-
+                  style={{padding: '0.3px'}}
                   value={tags}
                   onAddChip={handleAdd}
                   onDeleteChip={handleDelete}

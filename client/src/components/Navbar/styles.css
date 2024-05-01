@@ -8,7 +8,9 @@
 
 .nav_texts {
   color: black;
-  font-family: 'Mulish';
+  width: 100%;
+  font-family: 'Mulish' !important;
+  padding: 5px;
 }
 
 .nav_texts:hover {
@@ -16,16 +18,17 @@
   font-family: 'Mulish';
 }
 
-.nav_texts:active {
-  color: black;
-  font-family: 'Mulish';
+.mobile_menu {
+ margin-left: 20px !important;
+}
+
+.menu_icon {
+  color: black !important;
 }
 
 button {
     /* Variables */
     --button_radius: 0.5em;
-    /* --button_color: #FEF9F5;
-    --button_outline_color: #8b939f; */
     --button_color: #FEF9F5;
     --button_outline_color: black;
     font-size: 14px;

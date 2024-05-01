@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import useStyles from "./styles"; // Your custom styles
-import petBackGround2 from "../../images/pet-back2.png"; // Background image
 import petBackGround3 from "../../images/pet-back3.jpeg"; // Background image
 
 const Hero = () => {
