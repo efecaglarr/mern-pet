@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fc1ad58d.css",
+    "main.js": "/static/js/main.048a51d8.js",
+    "static/media/pet-back3.jpeg": "/static/media/pet-back3.99e49ab70240224d322f.jpeg",
+    "static/media/logo.png": "/static/media/logo.5cf5123a432cd79a263c.png",
+    "index.html": "/index.html",
+    "main.fc1ad58d.css.map": "/static/css/main.fc1ad58d.css.map",
+    "main.048a51d8.js.map": "/static/js/main.048a51d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc1ad58d.css",
+    "static/js/main.048a51d8.js"
+  ]
+}

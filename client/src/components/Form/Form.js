@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import useStyles from './styles'
-import { Typography, TextField, Button, Paper, InputAdornment } from '@material-ui/core';
+import { Typography, TextField, Button, Paper, InputAdornment, Grid } from '@material-ui/core';
 import LocationOnIcon from '@mui/icons-material/LocationOn'
+import PhoneIcon from '@mui/icons-material/Phone';
 import FileBase from 'react-file-base64'
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {createPost, updatePost} from '../../actions/posts'
 
 const Form = ({ currentId, setCurrentId }) => {
-    const [postData, setPostData] = useState({ title: '', message: '', tags: '', selectedFile: '', description: '', location: '' })
+    const [postData, setPostData] = useState({ title: '', message: '', tags: '', selectedFile: '', description: '', location: '', contact: '' })
     const classes = useStyles();
     const post = useSelector((state) => currentId ? state.posts.posts.find((p) => p._id === currentId): null);
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ const Form = ({ currentId, setCurrentId }) => {
    
     const clear = () => {
         setCurrentId(null);
-        setPostData({title: '',message: '',tags: '',selectedFile: '', description: '', location: ''});
+        setPostData({title: '',message: '',tags: '',selectedFile: '', description: '', location: '', contact: ''});
     }
 
     return (
@@ -55,10 +56,13 @@ const Form = ({ currentId, setCurrentId }) => {
                 <TextField name='text' variant='outlined' label='Tags' fullWidth value={postData.tags} onChange={(e)=> setPostData({ ...postData, tags: e.target.value.split(',') })}/>
                 <TextField name='description' variant='outlined' label='Description' fullWidth multiline minRows={6} value={postData.description} onChange={(e) => 	setPostData({ ...postData, description: e.target.value }) } />
 
-                <TextField InputProps={{ startAdornment: ( <InputAdornment position='start'> <LocationOnIcon sx={{ color: 'gray' }} /> 	</InputAdornment> ), }} name='location' variant='outlined' label='Location' fullWidth value={postData.location} onChange={(e) => setPostData({ ...postData, location: e.target.value })} />
-
+                <Grid md={6} >
+                <TextField style={{width:'98%'}} InputProps={{ startAdornment: ( <InputAdornment position='start'> <LocationOnIcon sx={{ color: 'gray' }} /> 	</InputAdornment> ), }} name='location' variant='outlined' label='Location' value={postData.location} onChange={(e) => setPostData({ ...postData, location: e.target.value })} />
+                </Grid>
+                <Grid md={6} >
+                <TextField InputProps={{ startAdornment: ( <InputAdornment position='start'> <PhoneIcon sx={{ color: 'gray' }} /> 	</InputAdornment> ), }} name='contact' variant='outlined' label='Contact' fullWidth value={postData.contact} onChange={(e) => setPostData({ ...postData, contact: e.target.value })} />
+                </Grid>
                 <div className={classes.fileInput}><FileBase type='file' multiple={false} onDone={({base64}) => setPostData({...postData, selectedFile: base64})}/></div>
-                
                 <Button className={classes.buttonSubmit} variant="contained" color='primary' size="large" type='submit' fullWidth>Submit</Button> {/* Çok fazla props (özellik) var ama bunlar materialUI'a ait*/}
                 <br/>
                 <Button variant="contained" color='secondary' size="large" onClick={clear} fullWidth>Clear</Button> {/* Bu propslar olmasaydı oldukça fazla css yazacaktık*/}

@@ -64,28 +64,9 @@ const Home = ({currentId, setCurrentId}) => {
           <Grid className={classes.gridContainer} container justifyContent="space-between" alignItems="stretch" spacing={3}>
             <Grid item xs={12} /* take 12 spaces on mobile */ sm={12} md={12}>
               <div className={classes.appBarSearch}>
-                <TextField
-                  name="search"
-                  variant="outlined"
-                  label="Search"
-                  onKeyDown={handleKeyPress}
-                  fullWidth
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  style={{ marginBottom: "10px", width: "80%"}}
-                />
-                <MuiChipsInput
-                  style={{padding: '0.3px'}}
-                  value={tags}
-                  onAddChip={handleAdd}
-                  onDeleteChip={handleDelete}
-                />
-                <Button
-                  onClick={searchPost}
-                  className={classes.searchButton}
-                  variant="contained"
-                  color="primary"
-                >
+                <TextField name="search" variant="outlined" label="Search" onKeyDown={handleKeyPress} fullWidth value={search} onChange={(e) => setSearch(e.target.value)} style={{ marginRight: "10px", width: "70%"}} />
+                <MuiChipsInput size="large" style={{padding: '0.2em',}} value={tags} onAddChip={handleAdd} onDeleteChip={handleDelete}/>
+                <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">
                   Search
                 </Button>
               </div>

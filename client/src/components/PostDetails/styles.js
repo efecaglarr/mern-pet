@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
   },
   section: {
     borderRadius: '20px',
-    margin: '10px',
+    margin: '20px',
     flex: 1,
   },
   imageSection: {

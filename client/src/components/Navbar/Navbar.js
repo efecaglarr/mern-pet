@@ -202,13 +202,14 @@ const Navbar = () => {
 							sx={{
 								display: { xs: "block", md: "none" },
 							}}
-							className="menu"
 						>
 							{pages.map((page) => (
 								<MenuItem key={page} onClick={handleCloseNavMenu}>
+									<Link key={page} to={`/${page.toLowerCase()}`}>
 									<Typography className='nav_texts' textAlign='center'>
 										{page}
 									</Typography>
+									</Link>
 								</MenuItem>
 							))}
 						</Menu>

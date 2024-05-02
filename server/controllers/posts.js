@@ -49,8 +49,11 @@ export const getPostsBySearch = async (req, res) => {
 
 export const createPost = async (req,res) => {
     const post = req.body;
-
+    console.log("FRONTEND POST : ");
+    console.log(post);
     const newPost = new PostMessage({ ...post, creator: req.userId, createdAt: new Date().toISOString() });
+    console.log("DB RESPONSE POST : ");
+    console.log(newPost);
  
     try {
         await newPost.save();

@@ -22,7 +22,7 @@ app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
 app.get('/', (req,res) => {
-  res.send('Hello to Memories API');
+  res.send('We are home!');
 })
 
 const PORT = process.env.PORT;

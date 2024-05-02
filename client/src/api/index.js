@@ -1,7 +1,10 @@
 import axios from 'axios' /** It is a JavaScript library that allows us
 to easily perform HTTP operations in client side applications. */
 
-const API = axios.create({ baseURL: 'http://localhost:4444'});
+const API = axios.create({ baseURL: 'https://memories-app-pclg.onrender.com'});
+// const API = axios.create({ baseURL: 'http://localhost:4444' });
+
+console.log(API.baseURL);
 
 API.interceptors.request.use((req) => {
     if (localStorage.getItem('profile')) {
