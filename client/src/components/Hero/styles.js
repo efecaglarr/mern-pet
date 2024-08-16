@@ -15,7 +15,7 @@ export default makeStyles((theme) => ({
   },
   textOverlay: {
     position: 'absolute', // Absolute positioning for overlay
-    top: '70%', // Position the text at the top 20% of the image
+    top: '65%', // Position the text at the top 20% of the image
     left: '5%', // Slight left margin for alignment
     zIndex: 1, // Ensure the text is above the image
     color: '#fff', // White text color
